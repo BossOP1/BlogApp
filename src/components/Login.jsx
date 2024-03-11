@@ -1,12 +1,13 @@
 import React from 'react'
 import {login as authLogin} from '../store/authSlice'
-import {Button,Input,Logo} from './index'
+import {Button,Logo} from './index'
 import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
 import {useForm} from "react-hook-form"
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import {Input} from './index'
 
 
 function Login() {
@@ -29,8 +30,6 @@ function Login() {
             setError(error.message)
         }
     }
-
-
 
   return (
     <div className='flex items-center justify-center w-full'>

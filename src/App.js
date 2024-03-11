@@ -22,18 +22,17 @@ authService.getCurrentUser()
   }
 })
 .finally(()=>{setLoading(false)})
-
-
-
   
 }, [])
+
+
 
 return !loading ? (
 <div className='min-h-[100vh] w-[100vw] flex justify-center flex-wrap bg-gray-400 p-10'>
 <div className='w-full h-full text-center block'>
   <Header/>
   <main>
-  TODO:  {/* <Outlet/> */}
+  TODO: {/* <Outlet/> */}
   </main>
   <Footer/>
 

@@ -9,10 +9,8 @@ export class Service{
     constructor(){
         this.client
         .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProjectId)
-        .setDataBase(conf.appwriteDatabaseId)
-        .setBucket(conf.apppwriteBucketId)
-        this.databases = new Databases(this.client)
+        .setProject(conf.appwriteProjectId);
+        this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
 
@@ -111,7 +109,7 @@ export class Service{
     async uploadFile(file){
     try {
        return await this.bucket.createFile(
-        conf.apppwriteBucketId,
+        conf.appwriteBucketId,
         ID.unique(),
         file
     )
@@ -124,7 +122,7 @@ export class Service{
     async deleteFile(fileId){
         try {
            return await this.bucket.deleteFile(
-            conf.apppwriteBucketId,
+            conf.appwriteBucketId,
             
         )
         } catch (error) {
@@ -135,7 +133,7 @@ export class Service{
 
         async getFilePreview(fileId){
             return this.bucket.getFilePreview(
-                conf.apppwriteBucketId,
+                conf.appwriteBucketId,
                 fileId
             )
         }

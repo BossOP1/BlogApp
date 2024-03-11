@@ -8,11 +8,12 @@ import store from './store/store';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
-import AllPosts from "./pages/AllPosts";
+import AllPost from "./pages/AllPost";
 import Post from "./pages/Post";
-import { AuthLayout, Login } from './components/index.js'
+import { Login } from './components/index.js'
 import EditPost from "./pages/EditPost";
 import AddPost from "./pages/AddPost";
+import {AuthLayout} from "./components/index"
 
 
 
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             element: (
                 <AuthLayout authentication>
                     {" "}
-                    <AllPosts />
+                    <AllPost />
                 </AuthLayout>
             ),
         },

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import appwriteService from '../../appwrite/config'
-import {Input,Button,Select,RTE} from '../Input'
+import {Input,Button,Select,RTE} from '../index'
 
 
 function PostForm({post}) {
@@ -22,10 +22,9 @@ const userData = useSelector(state => state.user.userData)
 
 const submit = async (data)=> {
     if(post){
-        data.image[0] ? appwriteService.
-        uploadFile(data.image[0]) : null
+     const file = data.image[0]?appwriteService.uploadFile(data.image[0]) : null
 
-        if (file){
+        if(file){
             appwriteService.deleteFile(post.featuredImage)
         }
      const dbPost = await appwriteService.updatePost
